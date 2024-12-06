@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import Navbar from "../navBar/navBar"
 import style from './header.module.css'
 import Cart from "../cart/cart"
