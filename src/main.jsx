@@ -4,16 +4,23 @@ import './index.css'
 import Home from './components/home/home'
 import Shop from './components/shop/shop'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import App from './components/app/app'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />
+    element: <App />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: '/shop',
+        element: <Shop />
+      }
+    ]
   },
-  {
-    path: '/shop',
-    element: <Shop />
-  }
 ])
 
 createRoot(document.getElementById('root')).render(
