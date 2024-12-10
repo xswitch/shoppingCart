@@ -5,7 +5,7 @@ import Cart from "../cart/cart"
 const Header = () => {
   return (
     <div className={style.container}>
-      <h1>React Shop</h1>
+      <h1 className={style.title}>React Shop</h1>
       <Navbar />
       <Cart />
     </div>

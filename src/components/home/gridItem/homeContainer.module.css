@@ -7,14 +7,13 @@
   color: orange;
 }
 
-.largeTitle {
-  font-size: 6rem;
-  color: white;
-  font-weight: bolder;
-  margin: 0;
-  line-height: normal;
+.container>div {
+  padding: 2rem;
 }
 
-.mediumTitle {
-  margin: 0;
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
