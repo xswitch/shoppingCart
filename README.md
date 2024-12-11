@@ -8,12 +8,8 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-Needed components
--> Navbar
--> NavItems - Home Products About
--> Sidebar
--> Categories in sidebar
--> Product card
--> Product page
--> cart
--> search bar
+TODO
+-> finish layout for shop
+-> create item cards
+-> create search bar and categories components
+-> create blank loading cards

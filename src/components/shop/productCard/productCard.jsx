@@ -1,8 +1,11 @@
 import style from './productCard.module.css'
 
-const ProductCard = () => {
+const ProductCard = ({product}) => {
+  console.log(product)
   return (
-    <div className={style.card}>Product</div>
+    <div className={style.card}>
+      <img src={product.image} alt="" srcset="" className={style.image}/>
+    </div>
   )
 }
 
