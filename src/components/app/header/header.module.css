@@ -1,7 +1,8 @@
 .container {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
+  justify-items: center;
   background-color: rgb(20, 20, 20);
   border-bottom: 2px solid rgb(40, 40, 40);
   background-image: url('/src/images/abstractDesign.svg');

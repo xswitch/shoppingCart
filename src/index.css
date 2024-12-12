@@ -24,4 +24,5 @@ body {
   height: 100dvh;
   display: flex;
   flex-direction: column;
+  background-color: rgb(20, 20, 20);
 }

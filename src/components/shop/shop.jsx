@@ -16,6 +16,10 @@ const Shop = () => {
             return <ProductCard key={crypto.randomUUID()} product={product} />;
           })}
       </div>
+      <div>
+        <div>Search</div>
+        <div>Categories</div>
+      </div>
     </div>
   );
 };
