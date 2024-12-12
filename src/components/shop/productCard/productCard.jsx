@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
         {product.description.slice(0, 75) +
           (product.description.length > 75 && "... ")}
         {product.description.length > 75 && (
-          <Link to={`${product.id}`}>Show More</Link>
+          <Link to={`${product.id}`} state={product}>Show More</Link>
         )}
       </p>
     </div>

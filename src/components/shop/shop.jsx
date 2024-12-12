@@ -1,11 +1,9 @@
 import ProductCard from "./productCard/productCard";
-import useFetch from "../../hooks/useFetch";
 import style from "./shop.module.css";
+import { useOutletContext } from "react-router-dom";
 
 const Shop = () => {
-  const { data, loading, error } = useFetch(
-    "https://fakestoreapi.com/products/"
-  );
+  const [data, loading, error] = useOutletContext();
   if (error) return <div>{error}</div>;
   return (
     <div className={style.container}>
