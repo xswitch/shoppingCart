@@ -14,6 +14,3 @@ TODO
  > Price and buy button
 -> create search bar and categories components
 -> create blank loading cards
-
--> Dynamic paths in shop
--> Shop id 1 should to card page of item with id 1
