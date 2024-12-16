@@ -12,10 +12,11 @@ TODO
 -> finish layout for shop
 -> create item cards
  > Price and buy button
+ > Add to cart component
 -> create search bar and categories components
 -> create blank loading cards
 -> Item not found page
 
 
 done
-Active color on cart icon
+Format price. keeps all whole numbers, and fixes decimals to two points

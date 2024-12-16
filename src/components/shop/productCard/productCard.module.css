@@ -58,16 +58,3 @@
   color: orange;
   align-items: center;
 }
-
-.footer>button {
-  padding: 0.5rem;
-  font-size: 1rem;
-  background-color: rgb(209, 137, 3);
-  border: none;
-  transition: all 0.2s;
-}
-
-.footer>button:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}

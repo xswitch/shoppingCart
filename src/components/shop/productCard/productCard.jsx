@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import style from "./productCard.module.css";
+import formatPrice from "../../../utils/formatPrice";
+import AddToCart from "../addToCart/addToCart";
 
-const ProductCard = ({ product }) => {
-  console.log(product);
+const ProductCard = ({ product, addToCart }) => {
   return (
     <div className={style.card}>
       <div className={style.imageContainer}>
@@ -21,9 +22,9 @@ const ProductCard = ({ product }) => {
       <div className={style.footer}>
         <div className={style.priceContainer}>
           <p className={style.priceTitle}>Price</p>
-          <p className={style.price}>${product.price}</p>
+          <p className={style.price}>${formatPrice(product.price)}</p>
         </div>
-        <button>Add To Cart</button>
+        <AddToCart productId={product.id} addToCart={addToCart} />
       </div>
     </div>
   );

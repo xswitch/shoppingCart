@@ -3,7 +3,7 @@ import style from "./shop.module.css";
 import { useOutletContext } from "react-router-dom";
 
 const Shop = () => {
-  const [data, loading, error] = useOutletContext();
+  const [data, loading, error, addToCart] = useOutletContext();
   if (error) return <div>{error}</div>;
   return (
     <div className={style.container}>
@@ -11,7 +11,7 @@ const Shop = () => {
         {loading && <h1>Loading...</h1>}
         {data &&
           data.map((product) => {
-            return <ProductCard key={crypto.randomUUID()} product={product} />;
+            return <ProductCard key={crypto.randomUUID()} product={product} addToCart={addToCart} />;
           })}
       </div>
       <div>
