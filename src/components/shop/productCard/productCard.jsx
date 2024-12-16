@@ -13,9 +13,18 @@ const ProductCard = ({ product }) => {
         {product.description.slice(0, 75) +
           (product.description.length > 75 && "... ")}
         {product.description.length > 75 && (
-          <Link to={`${product.id}`} state={product}>Show More</Link>
+          <Link to={`${product.id}`} state={product}>
+            Show More
+          </Link>
         )}
       </p>
+      <div className={style.footer}>
+        <div className={style.priceContainer}>
+          <p className={style.priceTitle}>Price</p>
+          <p className={style.price}>${product.price}</p>
+        </div>
+        <button>Add To Cart</button>
+      </div>
     </div>
   );
 };

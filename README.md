@@ -14,3 +14,8 @@ TODO
  > Price and buy button
 -> create search bar and categories components
 -> create blank loading cards
+-> Item not found page
+
+
+done
+Active color on cart icon
