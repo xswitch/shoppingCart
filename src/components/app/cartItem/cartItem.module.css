@@ -1,0 +1,58 @@
+.cartItem {
+  display: grid;
+  grid-template-columns: 75px 1fr;
+  max-height: 75px;
+  overflow: hidden;
+  gap: 25px;
+}
+
+.imageContainer {
+  width: 71px;
+  height: 71px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  max-width: 71px;
+  max-height: 71px;
+}
+
+.infoContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  grid-column: span 2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.title,
+.price,
+.amount {
+  margin: 0;
+}
+
+.price {
+  color: orange;
+}
+
+.amount {
+  color: rgb(150, 150, 150)
+}
+
+.amount>span {
+  border-bottom: 1px solid rgb(150, 150, 150);
+}
+
+.amount>span:hover {
+  cursor: pointer;
+}

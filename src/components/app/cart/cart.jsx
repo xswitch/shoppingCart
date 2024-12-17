@@ -1,10 +1,11 @@
 import { useState } from "react";
 import style from "./cart.module.css";
-import { ShoppingCart } from "lucide-react";
+import { Car, ShoppingCart } from "lucide-react";
+import CartItem from "../cartItem/cartItem";
 
 const Cart = ({ cart, products }) => {
   const [active, setActive] = useState(false);
-  const [previousItemAmount, setPreviousItemAmount] = useState(0)
+  const [previousItemAmount, setPreviousItemAmount] = useState(0);
 
   const productsInCart = Object.keys(cart).map((key) => {
     let product = products.filter((entry) => `${entry.id}` === key);
@@ -13,17 +14,18 @@ const Cart = ({ cart, products }) => {
       title: product.title,
       price: product.price,
       amount: cart[key],
+      image: product.image,
     };
   });
 
-  const itemAmount = productsInCart.reduce((prev, cur) => cur.amount + prev, 0)
+  const itemAmount = productsInCart.reduce((prev, cur) => cur.amount + prev, 0);
 
   const handleClick = () => {
     setActive((active) => {
       if (active) {
         return false;
       } else {
-        setPreviousItemAmount(itemAmount)
+        setPreviousItemAmount(itemAmount);
         return true;
       }
     });
@@ -36,7 +38,22 @@ const Cart = ({ cart, products }) => {
         className={style.cart}
         onClick={handleClick}
       />
-      {itemAmount > previousItemAmount && <div className={style.newItems}>{itemAmount - previousItemAmount}</div>}
+      {itemAmount > previousItemAmount && (
+        <div className={style.newItems}>{itemAmount - previousItemAmount}</div>
+      )}
+      {active && (
+        <div className={style.cartContainer}>
+          {productsInCart.length > 0 ? (
+              productsInCart.map((product) => (
+                <CartItem key={crypto.randomUUID()} product={product} />
+              ))
+          ) : (
+            <div className={style.empty}>
+              <h4>Empty</h4>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

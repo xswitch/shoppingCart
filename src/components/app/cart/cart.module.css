@@ -2,6 +2,7 @@
   padding: 10px;
   filter: brightness(0.8);
   transition: all 0.2s;
+  position: relative;
 }
 
 .cart:hover {
@@ -29,4 +30,27 @@
   border-radius: 20px;
   border: 2px solid rgb(100, 100, 100, 1);
   text-align: center;
+}
+
+.cartContainer {
+  position: absolute;
+  top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  position: absolute;
+  min-width: 200px;
+  max-width: 350px;
+  min-height: 200px;
+  background-color: rgb(30, 30, 30);
+  border: 2px solid rgba(209, 137, 3, 1);
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
