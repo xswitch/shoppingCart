@@ -11,12 +11,9 @@ Currently, two official plugins are available:
 TODO
 -> finish layout for shop
 -> create item cards
- > Price and buy button
- > Add to cart component
 -> create search bar and categories components
 -> create blank loading cards
 -> Item not found page
-
+-> Display number of new items in cart in a small bubble
 
 done
-Format price. keeps all whole numbers, and fixes decimals to two points

@@ -3,7 +3,6 @@ import style from './navBar.module.css'
 
 const Navbar = () => {
   const current = useLocation()
-  console.log(current.pathname)
   return (
     <div className={style.container}>
       <Link to='/' className={`${style.navItem} ${current.pathname === '/' && style.active}`}>Home</Link>
