@@ -16,6 +16,7 @@ const Cart = ({ cart, products }) => {
         cartRef.current
       ) {
         setActive(false);
+        console.log('clicked')
       }
     };
     document.addEventListener("mousedown", outsideClick);
@@ -41,11 +42,13 @@ const Cart = ({ cart, products }) => {
     if (!active) {
       setActive(true);
       setPreviousItemAmount(itemAmount);
+    } else {
+      setActive(false)
     }
   };
 
   return (
-    <div className={style.container}>
+    <div className={style.container} ref={cartRef}>
       <ShoppingCart
         color={active ? "orange" : "white"}
         size={24}
@@ -56,7 +59,7 @@ const Cart = ({ cart, products }) => {
         <div className={style.newItems}>{itemAmount - previousItemAmount}</div>
       )}
       {active && (
-        <div className={style.cartContainer} ref={cartRef}>
+        <div className={style.cartContainer}>
           {productsInCart.length > 0 ? (
             productsInCart.map((product) => (
               <CartItem key={crypto.randomUUID()} product={product} />
