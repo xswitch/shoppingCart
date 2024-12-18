@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import style from "./cart.module.css";
 import { ShoppingCart } from "lucide-react";
 import CartItem from "../cartItem/cartItem";
+import formatPrice from "../../../utils/formatPrice";
 
 const Cart = ({ cart, products }) => {
   const [active, setActive] = useState(false);
@@ -16,7 +17,6 @@ const Cart = ({ cart, products }) => {
         cartRef.current
       ) {
         setActive(false);
-        console.log('clicked')
       }
     };
     document.addEventListener("mousedown", outsideClick);
@@ -43,7 +43,7 @@ const Cart = ({ cart, products }) => {
       setActive(true);
       setPreviousItemAmount(itemAmount);
     } else {
-      setActive(false)
+      setActive(false);
     }
   };
 
@@ -60,14 +60,33 @@ const Cart = ({ cart, products }) => {
       )}
       {active && (
         <div className={style.cartContainer}>
+          {productsInCart.length > 0 && (
+            <div className={style.cartHeader}>
+              <h4>
+                Total:{" "}
+                <span>
+                  $
+                  {formatPrice(
+                    productsInCart.reduce(
+                      (prev, cur) => prev + cur.price * cur.amount,
+                      0
+                    )
+                  )}
+                </span>
+              </h4>
+            </div>
+          )}
           {productsInCart.length > 0 ? (
             productsInCart.map((product) => (
               <CartItem key={crypto.randomUUID()} product={product} />
             ))
           ) : (
             <div className={style.empty}>
-              <h4>Empty</h4>
+              <h4>There&apos;s nothing here!</h4>
             </div>
+          )}
+          {productsInCart.length > 0 && (
+            <button className={style.button}>Checkout</button>
           )}
         </div>
       )}

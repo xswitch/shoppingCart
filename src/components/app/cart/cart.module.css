@@ -41,11 +41,35 @@
   position: absolute;
   min-width: 200px;
   max-width: 350px;
-  min-height: 200px;
   background-color: rgb(30, 30, 30);
   border: 2px solid rgba(209, 137, 3, 1);
   border-radius: 10px;
   padding: 25px;
+}
+
+.cartHeader>h4 {
+  margin: 0;
+  text-align: center;
+}
+
+.cartHeader>h4>span {
+  color: rgba(209, 137, 3, 1);
+}
+
+.button {
+  flex: 1;
+  min-height: 3rem;
+  border: none;
+  font-size: 1.2rem;
+  transition: 0.2s all;
+  border: 2px solid rgba(209, 137, 3, 1);
+  border-radius: 10px;
+  background-color: rgba(209, 137, 3, 1);
+}
+
+.button:hover {
+  background-color: rgb(30, 30, 30);
+  cursor: pointer;
 }
 
 .empty {
@@ -53,4 +77,5 @@
   justify-content: center;
   align-items: center;
   flex: 1;
+  min-height: 100px;
 }
