@@ -14,12 +14,7 @@ TODO
 -> create search bar and categories components
 -> create blank loading cards
 -> Item not found page
--> Open cart and see items
- > Ability to remove or edit amount of items
- > See total price
- > Show sum of items if more than one of an item
 
-
-Show total price & amount up top and a checkout button on bottom
+ > Ability to remove or edit amount of items in cart
 
 Bugs

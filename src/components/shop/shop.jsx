@@ -1,4 +1,6 @@
+import Categories from "./categories/categories";
 import ProductCard from "./productCard/productCard";
+import SearchBar from "./searchBar/searchBar";
 import style from "./shop.module.css";
 import { useOutletContext } from "react-router-dom";
 
@@ -14,9 +16,9 @@ const Shop = () => {
             return <ProductCard key={crypto.randomUUID()} product={product} addToCart={addToCart} />;
           })}
       </div>
-      <div>
-        <div>Search</div>
-        <div>Categories</div>
+      <div className={style.sidebar}>
+        <SearchBar />
+        {loading ? <h4>Loading...</h4> : <Categories products={data} />}
       </div>
     </div>
   );

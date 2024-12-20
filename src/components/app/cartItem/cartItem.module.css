@@ -28,8 +28,25 @@
   justify-content: center;
 }
 
-.title {
+.infoContainer>div {
   grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 25px;
+}
+
+.infoContainer>div>button {
+  background: none;
+  border: none;
+  color: rgb(150, 150, 150);
+  font-size: 1rem;
+}
+
+.infoContainer>div>button:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.title {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
