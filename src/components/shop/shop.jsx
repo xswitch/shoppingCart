@@ -11,8 +11,9 @@ const Shop = () => {
   const [filteredProducts, setFilteredProducts] = useState(null);
 
   useEffect(() => {
+    
     setFilteredProducts(
-      data.filter((product) => String(product.title).includes(search))
+      data.filter((product) => String(product.title).toLowerCase().includes(search.toLowerCase()))
     );
   }, [search, data]);
 
