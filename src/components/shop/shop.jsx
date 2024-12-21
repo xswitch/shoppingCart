@@ -12,14 +12,16 @@ const Shop = () => {
   const [category, setCategory] = useState("");
 
   useEffect(() => {
-    setFilteredProducts(
-      data.filter(
-        (product) =>
-          String(product.title).toLowerCase().includes(search.toLowerCase()) &&
-          (String(product.category).toLowerCase() === category.toLowerCase() || category.toLowerCase() === '')
-      )
-    );
-  }, [search, data, category]);
+    if (!loading) {
+      setFilteredProducts(
+        data.filter(
+          (product) =>
+            String(product.title).toLowerCase().includes(search.toLowerCase()) &&
+            (String(product.category).toLowerCase() === category.toLowerCase() || category.toLowerCase() === '')
+        )
+      );
+    }
+  }, [search, data, category, loading]);
 
   const changeSearch = (input) => {
     if (input.target.value === "") {
@@ -58,7 +60,7 @@ const Shop = () => {
         {loading ? (
           <h4>Loading...</h4>
         ) : (
-          <Categories products={data} changeCategory={changeCategory} />
+          <Categories products={data} changeCategory={changeCategory} currentCategory={category} />
         )}
       </div>
     </div>
