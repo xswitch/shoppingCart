@@ -9,9 +9,8 @@ Currently, two official plugins are available:
 
 
 TODO
--> finish layout for shop
 -> create item cards
--> create search bar and categories components
+-> categories components
 -> create blank loading cards
 -> Item not found page
 

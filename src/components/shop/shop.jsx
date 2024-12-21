@@ -9,20 +9,31 @@ const Shop = () => {
   const [data, loading, error, addToCart] = useOutletContext();
   const [search, setSearch] = useState("");
   const [filteredProducts, setFilteredProducts] = useState(null);
+  const [category, setCategory] = useState("");
 
   useEffect(() => {
-    
     setFilteredProducts(
-      data.filter((product) => String(product.title).toLowerCase().includes(search.toLowerCase()))
+      data.filter(
+        (product) =>
+          String(product.title).toLowerCase().includes(search.toLowerCase()) &&
+          (String(product.category).toLowerCase() === category.toLowerCase() || category.toLowerCase() === '')
+      )
     );
-  }, [search, data]);
+  }, [search, data, category]);
 
   const changeSearch = (input) => {
-    console.log(input.target.value);
     if (input.target.value === "") {
       setSearch("");
     } else {
       setSearch(input.target.value);
+    }
+  };
+
+  const changeCategory = (value) => {
+    if (value === category) {
+      setCategory("");
+    } else {
+      setCategory(value);
     }
   };
 
@@ -44,7 +55,11 @@ const Shop = () => {
       </div>
       <div className={style.sidebar}>
         <SearchBar changeSearch={changeSearch} />
-        {loading ? <h4>Loading...</h4> : <Categories products={data} />}
+        {loading ? (
+          <h4>Loading...</h4>
+        ) : (
+          <Categories products={data} changeCategory={changeCategory} />
+        )}
       </div>
     </div>
   );
