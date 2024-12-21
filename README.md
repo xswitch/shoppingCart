@@ -10,7 +10,6 @@ Currently, two official plugins are available:
 
 TODO
 -> create item cards
--> categories components
 -> create blank loading cards
 -> Item not found page
 

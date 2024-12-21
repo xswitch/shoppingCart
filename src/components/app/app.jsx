@@ -23,9 +23,18 @@ const App = () => {
     }
   };
 
+  const deleteFromCart = (id) => {
+    console.log(id)
+    if (`${id}` in cart) {
+      const cartCopy = {...cart}
+      delete cartCopy[id]
+      setCart(cartCopy)
+    }
+  }
+
   return (
     <>
-      <Header cart={cart} products={data} />
+      <Header cart={cart} products={data} deleteFromCart={deleteFromCart} />
       <Outlet context={[data, loading, error, addToCart]} />
     </>
   );

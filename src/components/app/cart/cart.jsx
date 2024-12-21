@@ -4,7 +4,7 @@ import { ShoppingCart } from "lucide-react";
 import CartItem from "../cartItem/cartItem";
 import formatPrice from "../../../utils/formatPrice";
 
-const Cart = ({ cart, products }) => {
+const Cart = ({ cart, products, deleteFromCart }) => {
   const [active, setActive] = useState(false);
   const [previousItemAmount, setPreviousItemAmount] = useState(0);
   const cartRef = useRef(null);
@@ -33,6 +33,7 @@ const Cart = ({ cart, products }) => {
       price: product.price,
       amount: cart[key],
       image: product.image,
+      id: product.id,
     };
   });
 
@@ -78,7 +79,7 @@ const Cart = ({ cart, products }) => {
           )}
           {productsInCart.length > 0 ? (
             productsInCart.map((product) => (
-              <CartItem key={crypto.randomUUID()} product={product} />
+              <CartItem key={crypto.randomUUID()} product={product} deleteFromCart={deleteFromCart} />
             ))
           ) : (
             <div className={style.empty}>
