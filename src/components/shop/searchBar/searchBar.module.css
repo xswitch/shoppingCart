@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.container:hover {
+  cursor: pointer;
+}
+
+.container>input {
+  background-color: rgb(30, 30, 30);
+  border: 2px solid rgb(100, 100, 100);
+  font-size: 1rem;
+  padding: 5px;
+}
