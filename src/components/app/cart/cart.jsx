@@ -17,6 +17,7 @@ const Cart = ({ cart, products, deleteFromCart }) => {
         cartRef.current
       ) {
         setActive(false);
+        setPreviousItemAmount(itemAmount)
       }
     };
     document.addEventListener("mousedown", outsideClick);
@@ -45,6 +46,7 @@ const Cart = ({ cart, products, deleteFromCart }) => {
       setPreviousItemAmount(itemAmount);
     } else {
       setActive(false);
+      setPreviousItemAmount(itemAmount)
     }
   };
 

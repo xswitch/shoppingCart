@@ -13,6 +13,7 @@ TODO
 -> create blank loading cards
 -> Item not found page
 
- > Ability to remove or edit amount of items in cart
+ > Ability to edit amount of items in cart
 
 Bugs
+-> When removing items, new item popover only shows after adding enough items to pass previous amount

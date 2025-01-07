@@ -66,10 +66,27 @@
   color: rgb(150, 150, 150)
 }
 
-.amount>span {
+.amountButton {
   border-bottom: 1px solid rgb(150, 150, 150);
 }
 
-.amount>span:hover {
+.amountButton:hover {
+  cursor: pointer;
+}
+
+.infoContainer>.amountContainer {
+  display: flex;
+  grid-column: span 1;
+}
+
+.amountEdit {
+  display: flex;
+}
+
+.amountEdit>input {
+  max-width: 20px;
+}
+
+.amountEdit>svg {
   cursor: pointer;
 }
